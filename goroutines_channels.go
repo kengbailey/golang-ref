@@ -22,7 +22,7 @@
         channel. Similarly when data is read from a channel, the read is blocked
         until some goroutine writes data to that channel!!!!!
     - When using channels you must create the CONSUMER before the PRODUCER, read
-        before you write
+        from channel before you write to channel
 
 */
 
@@ -55,6 +55,11 @@ func main() {
     }
 
     // Wait for all goroutines to finish - if not program exits and 
-    //  all goroutines are killed when the main program quits
+    //  all goroutines are killed when the main program quits.
     hold.Wait()
+
+    // Channel that only allows strings to pass.
+    // Channels can only be created using the make function.
+    //printChan := make(chan string)
+    //printChan <- "testings"
 }
