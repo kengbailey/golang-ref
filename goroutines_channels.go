@@ -60,6 +60,17 @@ func main() {
 
     // Channel that only allows strings to pass.
     // Channels can only be created using the make function.
-    //printChan := make(chan string)
-    //printChan <- "testings"
+    printChan := make(chan string)
+
+    // Here's an anonymous function that takes a channel as a parameter,
+    //  reads from that channel and then prints the string read in.
+    // Again, we must read from the channel before we write to the channel.
+    // Reading from a channel is blocking, so we do it in a goroutine.
+    go func(stringChan chan string) {
+        tempString := <- stringChan
+        fmt.Println(tempString)
+    }(printChan)
+
+    // Write to channel
+    printChan <- "I can see clearly now, the rain is gone."
 }
