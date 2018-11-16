@@ -55,4 +55,17 @@ func main() {
 	// Does not include the split character in either resulting string
 	fmt.Println(strings.Split(num, "6")[0])
 
+	// String Formatting
+	// Helpful when you want to inject variables into a string
+	// Like when formatting a string
+	// 	bool:                    %t
+	// int, int8 etc.:          %d
+	// uint, uint8 etc.:        %d, %#x if printed with %#v
+	// float32, complex64, etc: %g
+	// string:                  %s
+	// chan:                    %p
+	// pointer:                 %p
+	//	anything??				%v
+	strFmt := fmt.Sprintf("%s --> %v", str, num)
+	fmt.Println(strFmt)
 }
