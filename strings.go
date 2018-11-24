@@ -68,4 +68,9 @@ func main() {
 	//	anything??				%v
 	strFmt := fmt.Sprintf("%s --> %v", str, num)
 	fmt.Println(strFmt)
+
+	// String Replace
+	kenStr := "Kenneth Gordon Bailey"
+	newKenStr := strings.Replace(kenStr, "Gordon", "G", -1)
+	fmt.Println(newKenStr)
 }
