@@ -1,6 +1,6 @@
 /*
    Ken Bailey
-   3/7/18
+   12/16/18
 
    Useful net-based Go code snippets and concepts.
 
@@ -30,6 +30,10 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	// set request header
+	req.Header.Set("password", "passw0rd")
+	req.Header.Set("username", "kenkenken")
 
 	// Make Request
 	resp, err := httpClient.Do(req)
