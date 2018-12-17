@@ -12,11 +12,34 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"net"
 	"net/http"
 	"time"
 )
 
 const url = "https://old.reddit.com"
+
+func ipToHost(ip string) (hostList []string, err error) {
+	hostList, err = net.LookupHost(ip)
+	if err != nil {
+		return nil, err
+	}
+
+	return
+}
+
+func hostToIP(host string) (ipList []string, err error) {
+	res, err := net.LookupIP(host)
+	if err != nil {
+		return nil, err
+	}
+
+	for _, ip := range res {
+		ipList = append(ipList, ip.String())
+	}
+
+	return
+}
 
 func main() {
 	// Making a network request.
@@ -49,4 +72,16 @@ func main() {
 
 	// print page body
 	fmt.Println(string(body))
+
+	////////////////////////////////////////////////////////////////
+
+	// Convert Hostname to IP Address
+	// Used to find the IP Address of a particular URL
+	ips, err := hostToIP("https://www.reddit.com")
+	if err != nil {
+		log.Fatal(err)
+	}
+	for _, ip := range ips {
+		fmt.Println(ip)
+	}
 }
