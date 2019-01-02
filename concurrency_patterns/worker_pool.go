@@ -1,3 +1,11 @@
+/*
+Kenneth Bailey
+2019-01-02
+
+Golang "Worker Pool" concurrency pattern
+
+https://gobyexample.com/worker-pools
+*/
 package main
 
 import (
