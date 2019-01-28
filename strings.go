@@ -73,4 +73,12 @@ func main() {
 	kenStr := "Kenneth Gordon Bailey"
 	newKenStr := strings.Replace(kenStr, "Gordon", "G", -1)
 	fmt.Println(newKenStr)
+
+	// Int to string
+	newStringInt := strconv.Itoa(126)
+	fmt.Println(newStringInt)
+
+	// String to int
+	newIntString, _ := strconv.Atoi("127")
+	fmt.Println(newIntString)
 }
