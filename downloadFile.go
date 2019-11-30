@@ -1,3 +1,5 @@
+// https://golangcode.com/download-a-file-from-a-url/
+
 package main
 
 import (
@@ -35,7 +37,7 @@ func downloader(destination, url string) error {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%x kb file downloaded to : %s \n", x/1000, destination)
+	fmt.Printf("%v kb file downloaded --> %s \n", float32(x/1024), destination)
 
 	return err
 }
