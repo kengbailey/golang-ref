@@ -17,6 +17,7 @@ import (
 
 func main() {
 	str := "This is a string"
+	var str1 = "this is another string"
 	otherStr := []byte("This can also be a string")
 
 	// Print a string
